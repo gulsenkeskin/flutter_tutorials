@@ -15,17 +15,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 MarvelStorySummary _$MarvelStorySummaryFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
+  switch (json['type']) {
     case 'cover':
       return _CoverMarvelStorySummary.fromJson(json);
-    case 'interior':
+    case 'interiorStory':
       return _InteriorMarvelStorySummary.fromJson(json);
     case 'promo':
       return _PromoMarvelStorySummary.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MarvelStorySummary',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(json, 'type', 'MarvelStorySummary',
+          'Invalid union type "${json['type']}"!');
   }
 }
 
@@ -202,7 +202,7 @@ class _$_CoverMarvelStorySummary implements _CoverMarvelStorySummary {
   @JsonKey(name: 'name')
   final String? name;
 
-  @JsonKey(name: 'runtimeType')
+  @JsonKey(name: 'type')
   final String $type;
 
   @override
@@ -395,7 +395,7 @@ class _$_InteriorMarvelStorySummary implements _InteriorMarvelStorySummary {
       {@JsonKey(name: 'resourceURI') this.url,
       @JsonKey(name: 'name') this.name,
       final String? $type})
-      : $type = $type ?? 'interior';
+      : $type = $type ?? 'interiorStory';
 
   factory _$_InteriorMarvelStorySummary.fromJson(Map<String, dynamic> json) =>
       _$$_InteriorMarvelStorySummaryFromJson(json);
@@ -407,7 +407,7 @@ class _$_InteriorMarvelStorySummary implements _InteriorMarvelStorySummary {
   @JsonKey(name: 'name')
   final String? name;
 
-  @JsonKey(name: 'runtimeType')
+  @JsonKey(name: 'type')
   final String $type;
 
   @override
@@ -609,7 +609,7 @@ class _$_PromoMarvelStorySummary implements _PromoMarvelStorySummary {
   @JsonKey(name: 'name')
   final String? name;
 
-  @JsonKey(name: 'runtimeType')
+  @JsonKey(name: 'type')
   final String $type;
 
   @override

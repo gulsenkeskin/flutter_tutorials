@@ -21,9 +21,11 @@ MarvelComic _$MarvelComicFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MarvelComic {
   @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
+  @IntToStringConverter()
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'digitalId')
-  int? get digitalId => throw _privateConstructorUsedError;
+  @NullableIntToNullableStringConverter()
+  String? get digitalId => throw _privateConstructorUsedError;
   @JsonKey(name: 'title')
   String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'modified')
@@ -34,6 +36,10 @@ mixin _$MarvelComic {
   MarvelImage? get thumbnail => throw _privateConstructorUsedError;
   @JsonKey(name: 'images')
   List<MarvelImage> get images => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stories')
+  MarvelStoryList get stories => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creators')
+  MarvelCreatorList get creators => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,9 +55,11 @@ abstract class $MarvelComicCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'id')
-          int id,
+      @IntToStringConverter()
+          String id,
       @JsonKey(name: 'digitalId')
-          int? digitalId,
+      @NullableIntToNullableStringConverter()
+          String? digitalId,
       @JsonKey(name: 'title')
           String? title,
       @JsonKey(name: 'modified')
@@ -61,9 +69,15 @@ abstract class $MarvelComicCopyWith<$Res> {
       @JsonKey(name: 'thumbnail')
           MarvelImage? thumbnail,
       @JsonKey(name: 'images')
-          List<MarvelImage> images});
+          List<MarvelImage> images,
+      @JsonKey(name: 'stories')
+          MarvelStoryList stories,
+      @JsonKey(name: 'creators')
+          MarvelCreatorList creators});
 
   $MarvelImageCopyWith<$Res>? get thumbnail;
+  $MarvelStoryListCopyWith<$Res> get stories;
+  $MarvelCreatorListCopyWith<$Res> get creators;
 }
 
 /// @nodoc
@@ -86,16 +100,18 @@ class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
     Object? format = null,
     Object? thumbnail = freezed,
     Object? images = null,
+    Object? stories = null,
+    Object? creators = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       digitalId: freezed == digitalId
           ? _value.digitalId
           : digitalId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -116,6 +132,14 @@ class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<MarvelImage>,
+      stories: null == stories
+          ? _value.stories
+          : stories // ignore: cast_nullable_to_non_nullable
+              as MarvelStoryList,
+      creators: null == creators
+          ? _value.creators
+          : creators // ignore: cast_nullable_to_non_nullable
+              as MarvelCreatorList,
     ) as $Val);
   }
 
@@ -130,6 +154,22 @@ class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
       return _then(_value.copyWith(thumbnail: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MarvelStoryListCopyWith<$Res> get stories {
+    return $MarvelStoryListCopyWith<$Res>(_value.stories, (value) {
+      return _then(_value.copyWith(stories: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MarvelCreatorListCopyWith<$Res> get creators {
+    return $MarvelCreatorListCopyWith<$Res>(_value.creators, (value) {
+      return _then(_value.copyWith(creators: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -142,9 +182,11 @@ abstract class _$$_MarvelComicCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'id')
-          int id,
+      @IntToStringConverter()
+          String id,
       @JsonKey(name: 'digitalId')
-          int? digitalId,
+      @NullableIntToNullableStringConverter()
+          String? digitalId,
       @JsonKey(name: 'title')
           String? title,
       @JsonKey(name: 'modified')
@@ -154,10 +196,18 @@ abstract class _$$_MarvelComicCopyWith<$Res>
       @JsonKey(name: 'thumbnail')
           MarvelImage? thumbnail,
       @JsonKey(name: 'images')
-          List<MarvelImage> images});
+          List<MarvelImage> images,
+      @JsonKey(name: 'stories')
+          MarvelStoryList stories,
+      @JsonKey(name: 'creators')
+          MarvelCreatorList creators});
 
   @override
   $MarvelImageCopyWith<$Res>? get thumbnail;
+  @override
+  $MarvelStoryListCopyWith<$Res> get stories;
+  @override
+  $MarvelCreatorListCopyWith<$Res> get creators;
 }
 
 /// @nodoc
@@ -178,16 +228,18 @@ class __$$_MarvelComicCopyWithImpl<$Res>
     Object? format = null,
     Object? thumbnail = freezed,
     Object? images = null,
+    Object? stories = null,
+    Object? creators = null,
   }) {
     return _then(_$_MarvelComic(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       digitalId: freezed == digitalId
           ? _value.digitalId
           : digitalId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -208,6 +260,14 @@ class __$$_MarvelComicCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<MarvelImage>,
+      stories: null == stories
+          ? _value.stories
+          : stories // ignore: cast_nullable_to_non_nullable
+              as MarvelStoryList,
+      creators: null == creators
+          ? _value.creators
+          : creators // ignore: cast_nullable_to_non_nullable
+              as MarvelCreatorList,
     ));
   }
 }
@@ -217,8 +277,10 @@ class __$$_MarvelComicCopyWithImpl<$Res>
 class _$_MarvelComic implements _MarvelComic {
   const _$_MarvelComic(
       {@JsonKey(name: 'id')
+      @IntToStringConverter()
           required this.id,
       @JsonKey(name: 'digitalId')
+      @NullableIntToNullableStringConverter()
           this.digitalId,
       @JsonKey(name: 'title')
           this.title,
@@ -229,7 +291,11 @@ class _$_MarvelComic implements _MarvelComic {
       @JsonKey(name: 'thumbnail')
           this.thumbnail,
       @JsonKey(name: 'images')
-          final List<MarvelImage> images = const <MarvelImage>[]})
+          final List<MarvelImage> images = const <MarvelImage>[],
+      @JsonKey(name: 'stories')
+          this.stories = const MarvelStoryList(),
+      @JsonKey(name: 'creators')
+          this.creators = const MarvelCreatorList()})
       : _images = images;
 
   factory _$_MarvelComic.fromJson(Map<String, dynamic> json) =>
@@ -237,10 +303,12 @@ class _$_MarvelComic implements _MarvelComic {
 
   @override
   @JsonKey(name: 'id')
-  final int id;
+  @IntToStringConverter()
+  final String id;
   @override
   @JsonKey(name: 'digitalId')
-  final int? digitalId;
+  @NullableIntToNullableStringConverter()
+  final String? digitalId;
   @override
   @JsonKey(name: 'title')
   final String? title;
@@ -262,8 +330,15 @@ class _$_MarvelComic implements _MarvelComic {
   }
 
   @override
+  @JsonKey(name: 'stories')
+  final MarvelStoryList stories;
+  @override
+  @JsonKey(name: 'creators')
+  final MarvelCreatorList creators;
+
+  @override
   String toString() {
-    return 'MarvelComic(id: $id, digitalId: $digitalId, title: $title, modified: $modified, format: $format, thumbnail: $thumbnail, images: $images)';
+    return 'MarvelComic(id: $id, digitalId: $digitalId, title: $title, modified: $modified, format: $format, thumbnail: $thumbnail, images: $images, stories: $stories, creators: $creators)';
   }
 
   @override
@@ -280,13 +355,25 @@ class _$_MarvelComic implements _MarvelComic {
             (identical(other.format, format) || other.format == format) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.stories, stories) || other.stories == stories) &&
+            (identical(other.creators, creators) ||
+                other.creators == creators));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, digitalId, title, modified,
-      format, thumbnail, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      digitalId,
+      title,
+      modified,
+      format,
+      thumbnail,
+      const DeepCollectionEquality().hash(_images),
+      stories,
+      creators);
 
   @JsonKey(ignore: true)
   @override
@@ -305,9 +392,11 @@ class _$_MarvelComic implements _MarvelComic {
 abstract class _MarvelComic implements MarvelComic {
   const factory _MarvelComic(
       {@JsonKey(name: 'id')
-          required final int id,
+      @IntToStringConverter()
+          required final String id,
       @JsonKey(name: 'digitalId')
-          final int? digitalId,
+      @NullableIntToNullableStringConverter()
+          final String? digitalId,
       @JsonKey(name: 'title')
           final String? title,
       @JsonKey(name: 'modified')
@@ -317,17 +406,23 @@ abstract class _MarvelComic implements MarvelComic {
       @JsonKey(name: 'thumbnail')
           final MarvelImage? thumbnail,
       @JsonKey(name: 'images')
-          final List<MarvelImage> images}) = _$_MarvelComic;
+          final List<MarvelImage> images,
+      @JsonKey(name: 'stories')
+          final MarvelStoryList stories,
+      @JsonKey(name: 'creators')
+          final MarvelCreatorList creators}) = _$_MarvelComic;
 
   factory _MarvelComic.fromJson(Map<String, dynamic> json) =
       _$_MarvelComic.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int get id;
+  @IntToStringConverter()
+  String get id;
   @override
   @JsonKey(name: 'digitalId')
-  int? get digitalId;
+  @NullableIntToNullableStringConverter()
+  String? get digitalId;
   @override
   @JsonKey(name: 'title')
   String? get title;
@@ -343,6 +438,12 @@ abstract class _MarvelComic implements MarvelComic {
   @override
   @JsonKey(name: 'images')
   List<MarvelImage> get images;
+  @override
+  @JsonKey(name: 'stories')
+  MarvelStoryList get stories;
+  @override
+  @JsonKey(name: 'creators')
+  MarvelCreatorList get creators;
   @override
   @JsonKey(ignore: true)
   _$$_MarvelComicCopyWith<_$_MarvelComic> get copyWith =>

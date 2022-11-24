@@ -11,7 +11,7 @@ _$_CoverMarvelStorySummary _$$_CoverMarvelStorySummaryFromJson(
     _$_CoverMarvelStorySummary(
       url: json['resourceURI'] as String?,
       name: json['name'] as String?,
-      $type: json['runtimeType'] as String?,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_CoverMarvelStorySummaryToJson(
@@ -26,7 +26,7 @@ Map<String, dynamic> _$$_CoverMarvelStorySummaryToJson(
 
   writeNotNull('resourceURI', instance.url);
   writeNotNull('name', instance.name);
-  val['runtimeType'] = instance.$type;
+  val['type'] = instance.$type;
   return val;
 }
 
@@ -35,7 +35,7 @@ _$_InteriorMarvelStorySummary _$$_InteriorMarvelStorySummaryFromJson(
     _$_InteriorMarvelStorySummary(
       url: json['resourceURI'] as String?,
       name: json['name'] as String?,
-      $type: json['runtimeType'] as String?,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_InteriorMarvelStorySummaryToJson(
@@ -50,7 +50,7 @@ Map<String, dynamic> _$$_InteriorMarvelStorySummaryToJson(
 
   writeNotNull('resourceURI', instance.url);
   writeNotNull('name', instance.name);
-  val['runtimeType'] = instance.$type;
+  val['type'] = instance.$type;
   return val;
 }
 
@@ -59,7 +59,7 @@ _$_PromoMarvelStorySummary _$$_PromoMarvelStorySummaryFromJson(
     _$_PromoMarvelStorySummary(
       url: json['resourceURI'] as String?,
       name: json['name'] as String?,
-      $type: json['runtimeType'] as String?,
+      $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$_PromoMarvelStorySummaryToJson(
@@ -74,6 +74,6 @@ Map<String, dynamic> _$$_PromoMarvelStorySummaryToJson(
 
   writeNotNull('resourceURI', instance.url);
   writeNotNull('name', instance.name);
-  val['runtimeType'] = instance.$type;
+  val['type'] = instance.$type;
   return val;
 }

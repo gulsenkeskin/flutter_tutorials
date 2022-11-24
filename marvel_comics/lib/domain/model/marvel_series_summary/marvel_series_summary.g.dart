@@ -12,11 +12,12 @@ _$_MarvelSeriesSummary _$$_MarvelSeriesSummaryFromJson(
       name: json['name'] as String,
       format: $enumDecodeNullable(_$MarvelSeriesFormatEnumMap, json['format'],
               unknownValue: MarvelSeriesFormat.unknown) ??
-          MarvelSeriesFormat.unknown,
-      metadata: json['metadata'] == null
+          _formatDefaultValue,
+      metadata: _readFormatMetadataValue(json, 'metadata') == null
           ? const MarvelSeriesSummaryMetadata.unknown()
           : MarvelSeriesSummaryMetadata.fromJson(
-              json['metadata'] as Map<String, dynamic>),
+              _readFormatMetadataValue(json, 'metadata')
+                  as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MarvelSeriesSummaryToJson(

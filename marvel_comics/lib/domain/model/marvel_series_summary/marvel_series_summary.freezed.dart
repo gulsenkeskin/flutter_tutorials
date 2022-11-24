@@ -22,9 +22,9 @@ MarvelSeriesSummary _$MarvelSeriesSummaryFromJson(Map<String, dynamic> json) {
 mixin _$MarvelSeriesSummary {
   @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+  @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
   MarvelSeriesFormat get format => throw _privateConstructorUsedError;
-  @JsonKey(name: 'metadata')
+  @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
   MarvelSeriesSummaryMetadata get metadata =>
       throw _privateConstructorUsedError;
 
@@ -43,9 +43,9 @@ abstract class $MarvelSeriesSummaryCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name')
           String name,
-      @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+      @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
           MarvelSeriesFormat format,
-      @JsonKey(name: 'metadata')
+      @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
           MarvelSeriesSummaryMetadata metadata});
 
   $MarvelSeriesSummaryMetadataCopyWith<$Res> get metadata;
@@ -104,9 +104,9 @@ abstract class _$$_MarvelSeriesSummaryCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'name')
           String name,
-      @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+      @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
           MarvelSeriesFormat format,
-      @JsonKey(name: 'metadata')
+      @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
           MarvelSeriesSummaryMetadata metadata});
 
   @override
@@ -151,9 +151,9 @@ class _$_MarvelSeriesSummary implements _MarvelSeriesSummary {
   const _$_MarvelSeriesSummary(
       {@JsonKey(name: 'name')
           required this.name,
-      @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
-          this.format = MarvelSeriesFormat.unknown,
-      @JsonKey(name: 'metadata')
+      @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
+          this.format = _formatDefaultValue,
+      @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
           this.metadata = const MarvelSeriesSummaryMetadata.unknown()});
 
   factory _$_MarvelSeriesSummary.fromJson(Map<String, dynamic> json) =>
@@ -163,10 +163,10 @@ class _$_MarvelSeriesSummary implements _MarvelSeriesSummary {
   @JsonKey(name: 'name')
   final String name;
   @override
-  @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+  @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
   final MarvelSeriesFormat format;
   @override
-  @JsonKey(name: 'metadata')
+  @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
   final MarvelSeriesSummaryMetadata metadata;
 
   @override
@@ -208,9 +208,9 @@ abstract class _MarvelSeriesSummary implements MarvelSeriesSummary {
   const factory _MarvelSeriesSummary(
       {@JsonKey(name: 'name')
           required final String name,
-      @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+      @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
           final MarvelSeriesFormat format,
-      @JsonKey(name: 'metadata')
+      @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
           final MarvelSeriesSummaryMetadata metadata}) = _$_MarvelSeriesSummary;
 
   factory _MarvelSeriesSummary.fromJson(Map<String, dynamic> json) =
@@ -220,10 +220,10 @@ abstract class _MarvelSeriesSummary implements MarvelSeriesSummary {
   @JsonKey(name: 'name')
   String get name;
   @override
-  @JsonKey(name: 'format', unknownEnumValue: MarvelSeriesFormat.unknown)
+  @JsonKey(name: _formatJsonKey, unknownEnumValue: _formatDefaultValue)
   MarvelSeriesFormat get format;
   @override
-  @JsonKey(name: 'metadata')
+  @JsonKey(name: 'metadata', readValue: _readFormatMetadataValue)
   MarvelSeriesSummaryMetadata get metadata;
   @override
   @JsonKey(ignore: true)

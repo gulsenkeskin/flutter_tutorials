@@ -3,13 +3,15 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'marvel_story_summary.freezed.dart';
 part 'marvel_story_summary.g.dart';
 
-@freezed
+@Freezed(unionKey: 'type')
 class MarvelStorySummary with _$MarvelStorySummary {
+  @FreezedUnionValue('cover')
   const factory MarvelStorySummary.cover({
     @JsonKey(name: 'resourceURI') String? url,
     @JsonKey(name: 'name') String? name,
   }) = _CoverMarvelStorySummary;
 
+  @FreezedUnionValue('interiorStory')
   const factory MarvelStorySummary.interior({
     @JsonKey(name: 'resourceURI') String? url,
     @JsonKey(name: 'name') String? name,

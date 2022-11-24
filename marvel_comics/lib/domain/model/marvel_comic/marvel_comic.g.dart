@@ -8,8 +8,9 @@ part of 'marvel_comic.dart';
 
 _$_MarvelComic _$$_MarvelComicFromJson(Map<String, dynamic> json) =>
     _$_MarvelComic(
-      id: json['id'] as int,
-      digitalId: json['digitalId'] as int?,
+      id: const IntToStringConverter().fromJson(json['id'] as int),
+      digitalId: const NullableIntToNullableStringConverter()
+          .fromJson(json['digitalId'] as int?),
       title: json['title'] as String?,
       modified: json['modified'] == null
           ? null
@@ -24,11 +25,18 @@ _$_MarvelComic _$$_MarvelComicFromJson(Map<String, dynamic> json) =>
               ?.map((e) => MarvelImage.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <MarvelImage>[],
+      stories: json['stories'] == null
+          ? const MarvelStoryList()
+          : MarvelStoryList.fromJson(json['stories'] as Map<String, dynamic>),
+      creators: json['creators'] == null
+          ? const MarvelCreatorList()
+          : MarvelCreatorList.fromJson(
+              json['creators'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) {
   final val = <String, dynamic>{
-    'id': instance.id,
+    'id': const IntToStringConverter().toJson(instance.id),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -37,12 +45,15 @@ Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) {
     }
   }
 
-  writeNotNull('digitalId', instance.digitalId);
+  writeNotNull('digitalId',
+      const NullableIntToNullableStringConverter().toJson(instance.digitalId));
   writeNotNull('title', instance.title);
   writeNotNull('modified', instance.modified?.toIso8601String());
   val['format'] = _$MarvelComicFormatEnumMap[instance.format]!;
   writeNotNull('thumbnail', instance.thumbnail?.toJson());
   val['images'] = instance.images.map((e) => e.toJson()).toList();
+  val['stories'] = instance.stories.toJson();
+  val['creators'] = instance.creators.toJson();
   return val;
 }
 

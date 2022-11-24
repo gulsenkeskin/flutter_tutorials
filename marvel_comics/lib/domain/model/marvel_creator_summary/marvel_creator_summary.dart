@@ -36,5 +36,17 @@ class MarvelCreatorSummary with _$MarvelCreatorSummary {
   }) = _OtherMarvelCreatorSummary;
 
   factory MarvelCreatorSummary.fromJson(Map<String, dynamic> json) =>
-      _$MarvelCreatorSummaryFromJson(json);
+      _$MarvelCreatorSummaryFromJson(_appendRuntimeType(json));
 }
+
+Map<String, dynamic> _appendRuntimeType(Map<String, dynamic> json) =>
+    json..['runtimeType'] = _runtimeTypesMap[json['role']] ?? 'other';
+
+const _runtimeTypesMap = {
+  'editor': 'editor',
+  'writer': 'writer',
+  'inker': 'inker',
+  'penciller': 'penciller',
+  'penciller (cover)': 'penciller',
+  'colorist': 'colorist',
+};
