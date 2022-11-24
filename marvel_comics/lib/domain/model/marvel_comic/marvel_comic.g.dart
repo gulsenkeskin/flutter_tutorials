@@ -14,22 +14,37 @@ _$_MarvelComic _$$_MarvelComicFromJson(Map<String, dynamic> json) =>
       modified: json['modified'] == null
           ? null
           : DateTime.parse(json['modified'] as String),
-      format: $enumDecodeNullable(_$MarvelComicFormatEnumMap, json['format']),
+      format: $enumDecodeNullable(_$MarvelComicFormatEnumMap, json['format'],
+              unknownValue: MarvelComicFormat.unknown) ??
+          MarvelComicFormat.unknown,
+      thumbnail: json['thumbnail'] == null
+          ? null
+          : MarvelImage.fromJson(json['thumbnail'] as Map<String, dynamic>),
       images: (json['images'] as List<dynamic>?)
-              ?.map((e) => e as String)
+              ?.map((e) => MarvelImage.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <String>[],
+          const <MarvelImage>[],
     );
 
-Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'digitalId': instance.digitalId,
-      'title': instance.title,
-      'modified': instance.modified?.toIso8601String(),
-      'format': _$MarvelComicFormatEnumMap[instance.format],
-      'images': instance.images,
-    };
+Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('digitalId', instance.digitalId);
+  writeNotNull('title', instance.title);
+  writeNotNull('modified', instance.modified?.toIso8601String());
+  val['format'] = _$MarvelComicFormatEnumMap[instance.format]!;
+  writeNotNull('thumbnail', instance.thumbnail?.toJson());
+  val['images'] = instance.images.map((e) => e.toJson()).toList();
+  return val;
+}
 
 const _$MarvelComicFormatEnumMap = {
   MarvelComicFormat.unknown: 'unknown',

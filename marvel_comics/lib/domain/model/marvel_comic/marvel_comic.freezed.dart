@@ -20,12 +20,20 @@ MarvelComic _$MarvelComicFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MarvelComic {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'digitalId')
   int? get digitalId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title')
   String? get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'modified')
   DateTime? get modified => throw _privateConstructorUsedError;
-  MarvelComicFormat? get format => throw _privateConstructorUsedError;
-  List<String> get images => throw _privateConstructorUsedError;
+  @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+  MarvelComicFormat get format => throw _privateConstructorUsedError;
+  @JsonKey(name: 'thumbnail')
+  MarvelImage? get thumbnail => throw _privateConstructorUsedError;
+  @JsonKey(name: 'images')
+  List<MarvelImage> get images => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +48,22 @@ abstract class $MarvelComicCopyWith<$Res> {
       _$MarvelComicCopyWithImpl<$Res, MarvelComic>;
   @useResult
   $Res call(
-      {int id,
-      int? digitalId,
-      String? title,
-      DateTime? modified,
-      MarvelComicFormat? format,
-      List<String> images});
+      {@JsonKey(name: 'id')
+          int id,
+      @JsonKey(name: 'digitalId')
+          int? digitalId,
+      @JsonKey(name: 'title')
+          String? title,
+      @JsonKey(name: 'modified')
+          DateTime? modified,
+      @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+          MarvelComicFormat format,
+      @JsonKey(name: 'thumbnail')
+          MarvelImage? thumbnail,
+      @JsonKey(name: 'images')
+          List<MarvelImage> images});
+
+  $MarvelImageCopyWith<$Res>? get thumbnail;
 }
 
 /// @nodoc
@@ -65,7 +83,8 @@ class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
     Object? digitalId = freezed,
     Object? title = freezed,
     Object? modified = freezed,
-    Object? format = freezed,
+    Object? format = null,
+    Object? thumbnail = freezed,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
@@ -85,15 +104,31 @@ class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      format: freezed == format
+      format: null == format
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
-              as MarvelComicFormat?,
+              as MarvelComicFormat,
+      thumbnail: freezed == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as MarvelImage?,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MarvelImage>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MarvelImageCopyWith<$Res>? get thumbnail {
+    if (_value.thumbnail == null) {
+      return null;
+    }
+
+    return $MarvelImageCopyWith<$Res>(_value.thumbnail!, (value) {
+      return _then(_value.copyWith(thumbnail: value) as $Val);
+    });
   }
 }
 
@@ -106,12 +141,23 @@ abstract class _$$_MarvelComicCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      int? digitalId,
-      String? title,
-      DateTime? modified,
-      MarvelComicFormat? format,
-      List<String> images});
+      {@JsonKey(name: 'id')
+          int id,
+      @JsonKey(name: 'digitalId')
+          int? digitalId,
+      @JsonKey(name: 'title')
+          String? title,
+      @JsonKey(name: 'modified')
+          DateTime? modified,
+      @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+          MarvelComicFormat format,
+      @JsonKey(name: 'thumbnail')
+          MarvelImage? thumbnail,
+      @JsonKey(name: 'images')
+          List<MarvelImage> images});
+
+  @override
+  $MarvelImageCopyWith<$Res>? get thumbnail;
 }
 
 /// @nodoc
@@ -129,7 +175,8 @@ class __$$_MarvelComicCopyWithImpl<$Res>
     Object? digitalId = freezed,
     Object? title = freezed,
     Object? modified = freezed,
-    Object? format = freezed,
+    Object? format = null,
+    Object? thumbnail = freezed,
     Object? images = null,
   }) {
     return _then(_$_MarvelComic(
@@ -149,14 +196,18 @@ class __$$_MarvelComicCopyWithImpl<$Res>
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      format: freezed == format
+      format: null == format
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
-              as MarvelComicFormat?,
+              as MarvelComicFormat,
+      thumbnail: freezed == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as MarvelImage?,
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MarvelImage>,
     ));
   }
 }
@@ -165,38 +216,54 @@ class __$$_MarvelComicCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MarvelComic implements _MarvelComic {
   const _$_MarvelComic(
-      {required this.id,
-      this.digitalId,
-      this.title,
-      this.modified,
-      this.format,
-      final List<String> images = const <String>[]})
+      {@JsonKey(name: 'id')
+          required this.id,
+      @JsonKey(name: 'digitalId')
+          this.digitalId,
+      @JsonKey(name: 'title')
+          this.title,
+      @JsonKey(name: 'modified')
+          this.modified,
+      @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+          this.format = MarvelComicFormat.unknown,
+      @JsonKey(name: 'thumbnail')
+          this.thumbnail,
+      @JsonKey(name: 'images')
+          final List<MarvelImage> images = const <MarvelImage>[]})
       : _images = images;
 
   factory _$_MarvelComic.fromJson(Map<String, dynamic> json) =>
       _$$_MarvelComicFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final int id;
   @override
+  @JsonKey(name: 'digitalId')
   final int? digitalId;
   @override
+  @JsonKey(name: 'title')
   final String? title;
   @override
+  @JsonKey(name: 'modified')
   final DateTime? modified;
   @override
-  final MarvelComicFormat? format;
-  final List<String> _images;
+  @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+  final MarvelComicFormat format;
   @override
-  @JsonKey()
-  List<String> get images {
+  @JsonKey(name: 'thumbnail')
+  final MarvelImage? thumbnail;
+  final List<MarvelImage> _images;
+  @override
+  @JsonKey(name: 'images')
+  List<MarvelImage> get images {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_images);
   }
 
   @override
   String toString() {
-    return 'MarvelComic(id: $id, digitalId: $digitalId, title: $title, modified: $modified, format: $format, images: $images)';
+    return 'MarvelComic(id: $id, digitalId: $digitalId, title: $title, modified: $modified, format: $format, thumbnail: $thumbnail, images: $images)';
   }
 
   @override
@@ -211,13 +278,15 @@ class _$_MarvelComic implements _MarvelComic {
             (identical(other.modified, modified) ||
                 other.modified == modified) &&
             (identical(other.format, format) || other.format == format) &&
+            (identical(other.thumbnail, thumbnail) ||
+                other.thumbnail == thumbnail) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, digitalId, title, modified,
-      format, const DeepCollectionEquality().hash(_images));
+      format, thumbnail, const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
@@ -235,28 +304,45 @@ class _$_MarvelComic implements _MarvelComic {
 
 abstract class _MarvelComic implements MarvelComic {
   const factory _MarvelComic(
-      {required final int id,
-      final int? digitalId,
-      final String? title,
-      final DateTime? modified,
-      final MarvelComicFormat? format,
-      final List<String> images}) = _$_MarvelComic;
+      {@JsonKey(name: 'id')
+          required final int id,
+      @JsonKey(name: 'digitalId')
+          final int? digitalId,
+      @JsonKey(name: 'title')
+          final String? title,
+      @JsonKey(name: 'modified')
+          final DateTime? modified,
+      @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+          final MarvelComicFormat format,
+      @JsonKey(name: 'thumbnail')
+          final MarvelImage? thumbnail,
+      @JsonKey(name: 'images')
+          final List<MarvelImage> images}) = _$_MarvelComic;
 
   factory _MarvelComic.fromJson(Map<String, dynamic> json) =
       _$_MarvelComic.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'digitalId')
   int? get digitalId;
   @override
+  @JsonKey(name: 'title')
   String? get title;
   @override
+  @JsonKey(name: 'modified')
   DateTime? get modified;
   @override
-  MarvelComicFormat? get format;
+  @JsonKey(name: 'format', unknownEnumValue: MarvelComicFormat.unknown)
+  MarvelComicFormat get format;
   @override
-  List<String> get images;
+  @JsonKey(name: 'thumbnail')
+  MarvelImage? get thumbnail;
+  @override
+  @JsonKey(name: 'images')
+  List<MarvelImage> get images;
   @override
   @JsonKey(ignore: true)
   _$$_MarvelComicCopyWith<_$_MarvelComic> get copyWith =>
