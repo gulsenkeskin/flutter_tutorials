@@ -11,6 +11,7 @@ class MarvelComicsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.red),
       home: const MyHomePage(),
     );
