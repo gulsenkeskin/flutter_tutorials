@@ -35,39 +35,35 @@ mixin _$MarvelImage {
 abstract class $MarvelImageCopyWith<$Res> {
   factory $MarvelImageCopyWith(
           MarvelImage value, $Res Function(MarvelImage) then) =
-      _$MarvelImageCopyWithImpl<$Res, MarvelImage>;
-  @useResult
+      _$MarvelImageCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'path') String path,
       @JsonKey(name: 'extension') String extension});
 }
 
 /// @nodoc
-class _$MarvelImageCopyWithImpl<$Res, $Val extends MarvelImage>
-    implements $MarvelImageCopyWith<$Res> {
+class _$MarvelImageCopyWithImpl<$Res> implements $MarvelImageCopyWith<$Res> {
   _$MarvelImageCopyWithImpl(this._value, this._then);
 
+  final MarvelImage _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelImage) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = null,
-    Object? extension = null,
+    Object? path = freezed,
+    Object? extension = freezed,
   }) {
     return _then(_value.copyWith(
-      path: null == path
+      path: path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      extension: null == extension
+      extension: extension == freezed
           ? _value.extension
           : extension // ignore: cast_nullable_to_non_nullable
               as String,
-    ) as $Val);
+    ));
   }
 }
 
@@ -78,32 +74,32 @@ abstract class _$$_MarvelImageCopyWith<$Res>
           _$_MarvelImage value, $Res Function(_$_MarvelImage) then) =
       __$$_MarvelImageCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'path') String path,
       @JsonKey(name: 'extension') String extension});
 }
 
 /// @nodoc
-class __$$_MarvelImageCopyWithImpl<$Res>
-    extends _$MarvelImageCopyWithImpl<$Res, _$_MarvelImage>
+class __$$_MarvelImageCopyWithImpl<$Res> extends _$MarvelImageCopyWithImpl<$Res>
     implements _$$_MarvelImageCopyWith<$Res> {
   __$$_MarvelImageCopyWithImpl(
       _$_MarvelImage _value, $Res Function(_$_MarvelImage) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_MarvelImage));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_MarvelImage get _value => super._value as _$_MarvelImage;
+
   @override
   $Res call({
-    Object? path = null,
-    Object? extension = null,
+    Object? path = freezed,
+    Object? extension = freezed,
   }) {
     return _then(_$_MarvelImage(
-      path: null == path
+      path: path == freezed
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      extension: null == extension
+      extension: extension == freezed
           ? _value.extension
           : extension // ignore: cast_nullable_to_non_nullable
               as String,
@@ -138,18 +134,19 @@ class _$_MarvelImage implements _MarvelImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MarvelImage &&
-            (identical(other.path, path) || other.path == path) &&
-            (identical(other.extension, extension) ||
-                other.extension == extension));
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.extension, extension));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, path, extension);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(extension));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_MarvelImageCopyWith<_$_MarvelImage> get copyWith =>
       __$$_MarvelImageCopyWithImpl<_$_MarvelImage>(this, _$identity);
 

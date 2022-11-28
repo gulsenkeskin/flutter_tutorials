@@ -25,3 +25,6 @@ class MarvelApiAuthInterceptor extends Interceptor {
     return super.onRequest(options, handler);
   }
 }
+
+
+//Tüm API isteklerine aynı header grubunun eklenmesi gerekiyorsa, bu, dio interceptor'ları aracılığıyla verimli bir şekilde yapılabilir.

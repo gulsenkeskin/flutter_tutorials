@@ -51,8 +51,7 @@ mixin _$MarvelComic {
 abstract class $MarvelComicCopyWith<$Res> {
   factory $MarvelComicCopyWith(
           MarvelComic value, $Res Function(MarvelComic) then) =
-      _$MarvelComicCopyWithImpl<$Res, MarvelComic>;
-  @useResult
+      _$MarvelComicCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id')
       @IntToStringConverter()
@@ -81,93 +80,87 @@ abstract class $MarvelComicCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarvelComicCopyWithImpl<$Res, $Val extends MarvelComic>
-    implements $MarvelComicCopyWith<$Res> {
+class _$MarvelComicCopyWithImpl<$Res> implements $MarvelComicCopyWith<$Res> {
   _$MarvelComicCopyWithImpl(this._value, this._then);
 
+  final MarvelComic _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelComic) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? digitalId = freezed,
     Object? title = freezed,
     Object? modified = freezed,
-    Object? format = null,
+    Object? format = freezed,
     Object? thumbnail = freezed,
-    Object? images = null,
-    Object? stories = null,
-    Object? creators = null,
+    Object? images = freezed,
+    Object? stories = freezed,
+    Object? creators = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      digitalId: freezed == digitalId
+      digitalId: digitalId == freezed
           ? _value.digitalId
           : digitalId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: freezed == title
+      title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      modified: freezed == modified
+      modified: modified == freezed
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      format: null == format
+      format: format == freezed
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
               as MarvelComicFormat,
-      thumbnail: freezed == thumbnail
+      thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as MarvelImage?,
-      images: null == images
+      images: images == freezed
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<MarvelImage>,
-      stories: null == stories
+      stories: stories == freezed
           ? _value.stories
           : stories // ignore: cast_nullable_to_non_nullable
               as MarvelStoryList,
-      creators: null == creators
+      creators: creators == freezed
           ? _value.creators
           : creators // ignore: cast_nullable_to_non_nullable
               as MarvelCreatorList,
-    ) as $Val);
+    ));
   }
 
   @override
-  @pragma('vm:prefer-inline')
   $MarvelImageCopyWith<$Res>? get thumbnail {
     if (_value.thumbnail == null) {
       return null;
     }
 
     return $MarvelImageCopyWith<$Res>(_value.thumbnail!, (value) {
-      return _then(_value.copyWith(thumbnail: value) as $Val);
+      return _then(_value.copyWith(thumbnail: value));
     });
   }
 
   @override
-  @pragma('vm:prefer-inline')
   $MarvelStoryListCopyWith<$Res> get stories {
     return $MarvelStoryListCopyWith<$Res>(_value.stories, (value) {
-      return _then(_value.copyWith(stories: value) as $Val);
+      return _then(_value.copyWith(stories: value));
     });
   }
 
   @override
-  @pragma('vm:prefer-inline')
   $MarvelCreatorListCopyWith<$Res> get creators {
     return $MarvelCreatorListCopyWith<$Res>(_value.creators, (value) {
-      return _then(_value.copyWith(creators: value) as $Val);
+      return _then(_value.copyWith(creators: value));
     });
   }
 }
@@ -179,7 +172,6 @@ abstract class _$$_MarvelComicCopyWith<$Res>
           _$_MarvelComic value, $Res Function(_$_MarvelComic) then) =
       __$$_MarvelComicCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'id')
       @IntToStringConverter()
@@ -211,60 +203,61 @@ abstract class _$$_MarvelComicCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MarvelComicCopyWithImpl<$Res>
-    extends _$MarvelComicCopyWithImpl<$Res, _$_MarvelComic>
+class __$$_MarvelComicCopyWithImpl<$Res> extends _$MarvelComicCopyWithImpl<$Res>
     implements _$$_MarvelComicCopyWith<$Res> {
   __$$_MarvelComicCopyWithImpl(
       _$_MarvelComic _value, $Res Function(_$_MarvelComic) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_MarvelComic));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_MarvelComic get _value => super._value as _$_MarvelComic;
+
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? digitalId = freezed,
     Object? title = freezed,
     Object? modified = freezed,
-    Object? format = null,
+    Object? format = freezed,
     Object? thumbnail = freezed,
-    Object? images = null,
-    Object? stories = null,
-    Object? creators = null,
+    Object? images = freezed,
+    Object? stories = freezed,
+    Object? creators = freezed,
   }) {
     return _then(_$_MarvelComic(
-      id: null == id
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      digitalId: freezed == digitalId
+      digitalId: digitalId == freezed
           ? _value.digitalId
           : digitalId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: freezed == title
+      title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      modified: freezed == modified
+      modified: modified == freezed
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      format: null == format
+      format: format == freezed
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
               as MarvelComicFormat,
-      thumbnail: freezed == thumbnail
+      thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as MarvelImage?,
-      images: null == images
+      images: images == freezed
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<MarvelImage>,
-      stories: null == stories
+      stories: stories == freezed
           ? _value.stories
           : stories // ignore: cast_nullable_to_non_nullable
               as MarvelStoryList,
-      creators: null == creators
+      creators: creators == freezed
           ? _value.creators
           : creators // ignore: cast_nullable_to_non_nullable
               as MarvelCreatorList,
@@ -346,38 +339,33 @@ class _$_MarvelComic implements _MarvelComic {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MarvelComic &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.digitalId, digitalId) ||
-                other.digitalId == digitalId) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.modified, modified) ||
-                other.modified == modified) &&
-            (identical(other.format, format) || other.format == format) &&
-            (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.digitalId, digitalId) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.modified, modified) &&
+            const DeepCollectionEquality().equals(other.format, format) &&
+            const DeepCollectionEquality().equals(other.thumbnail, thumbnail) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
-            (identical(other.stories, stories) || other.stories == stories) &&
-            (identical(other.creators, creators) ||
-                other.creators == creators));
+            const DeepCollectionEquality().equals(other.stories, stories) &&
+            const DeepCollectionEquality().equals(other.creators, creators));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
-      digitalId,
-      title,
-      modified,
-      format,
-      thumbnail,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(digitalId),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(modified),
+      const DeepCollectionEquality().hash(format),
+      const DeepCollectionEquality().hash(thumbnail),
       const DeepCollectionEquality().hash(_images),
-      stories,
-      creators);
+      const DeepCollectionEquality().hash(stories),
+      const DeepCollectionEquality().hash(creators));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_MarvelComicCopyWith<_$_MarvelComic> get copyWith =>
       __$$_MarvelComicCopyWithImpl<_$_MarvelComic>(this, _$identity);
 

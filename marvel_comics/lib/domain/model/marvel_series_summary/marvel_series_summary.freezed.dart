@@ -38,8 +38,7 @@ mixin _$MarvelSeriesSummary {
 abstract class $MarvelSeriesSummaryCopyWith<$Res> {
   factory $MarvelSeriesSummaryCopyWith(
           MarvelSeriesSummary value, $Res Function(MarvelSeriesSummary) then) =
-      _$MarvelSeriesSummaryCopyWithImpl<$Res, MarvelSeriesSummary>;
-  @useResult
+      _$MarvelSeriesSummaryCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'name')
           String name,
@@ -52,43 +51,40 @@ abstract class $MarvelSeriesSummaryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarvelSeriesSummaryCopyWithImpl<$Res, $Val extends MarvelSeriesSummary>
+class _$MarvelSeriesSummaryCopyWithImpl<$Res>
     implements $MarvelSeriesSummaryCopyWith<$Res> {
   _$MarvelSeriesSummaryCopyWithImpl(this._value, this._then);
 
+  final MarvelSeriesSummary _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelSeriesSummary) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? format = null,
-    Object? metadata = null,
+    Object? name = freezed,
+    Object? format = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      format: null == format
+      format: format == freezed
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
               as MarvelSeriesFormat,
-      metadata: null == metadata
+      metadata: metadata == freezed
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as MarvelSeriesSummaryMetadata,
-    ) as $Val);
+    ));
   }
 
   @override
-  @pragma('vm:prefer-inline')
   $MarvelSeriesSummaryMetadataCopyWith<$Res> get metadata {
     return $MarvelSeriesSummaryMetadataCopyWith<$Res>(_value.metadata, (value) {
-      return _then(_value.copyWith(metadata: value) as $Val);
+      return _then(_value.copyWith(metadata: value));
     });
   }
 }
@@ -100,7 +96,6 @@ abstract class _$$_MarvelSeriesSummaryCopyWith<$Res>
           $Res Function(_$_MarvelSeriesSummary) then) =
       __$$_MarvelSeriesSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name')
           String name,
@@ -115,29 +110,31 @@ abstract class _$$_MarvelSeriesSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_MarvelSeriesSummaryCopyWithImpl<$Res>
-    extends _$MarvelSeriesSummaryCopyWithImpl<$Res, _$_MarvelSeriesSummary>
+    extends _$MarvelSeriesSummaryCopyWithImpl<$Res>
     implements _$$_MarvelSeriesSummaryCopyWith<$Res> {
   __$$_MarvelSeriesSummaryCopyWithImpl(_$_MarvelSeriesSummary _value,
       $Res Function(_$_MarvelSeriesSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_MarvelSeriesSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_MarvelSeriesSummary get _value => super._value as _$_MarvelSeriesSummary;
+
   @override
   $Res call({
-    Object? name = null,
-    Object? format = null,
-    Object? metadata = null,
+    Object? name = freezed,
+    Object? format = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_$_MarvelSeriesSummary(
-      name: null == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      format: null == format
+      format: format == freezed
           ? _value.format
           : format // ignore: cast_nullable_to_non_nullable
               as MarvelSeriesFormat,
-      metadata: null == metadata
+      metadata: metadata == freezed
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as MarvelSeriesSummaryMetadata,
@@ -179,19 +176,21 @@ class _$_MarvelSeriesSummary implements _MarvelSeriesSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MarvelSeriesSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.format, format) || other.format == format) &&
-            (identical(other.metadata, metadata) ||
-                other.metadata == metadata));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.format, format) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, format, metadata);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(format),
+      const DeepCollectionEquality().hash(metadata));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_MarvelSeriesSummaryCopyWith<_$_MarvelSeriesSummary> get copyWith =>
       __$$_MarvelSeriesSummaryCopyWithImpl<_$_MarvelSeriesSummary>(
           this, _$identity);

@@ -68,22 +68,22 @@ mixin _$MarvelCreatorSummary {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) =>
@@ -123,12 +123,12 @@ mixin _$MarvelCreatorSummary {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -152,40 +152,36 @@ mixin _$MarvelCreatorSummary {
 abstract class $MarvelCreatorSummaryCopyWith<$Res> {
   factory $MarvelCreatorSummaryCopyWith(MarvelCreatorSummary value,
           $Res Function(MarvelCreatorSummary) then) =
-      _$MarvelCreatorSummaryCopyWithImpl<$Res, MarvelCreatorSummary>;
-  @useResult
+      _$MarvelCreatorSummaryCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
 }
 
 /// @nodoc
-class _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        $Val extends MarvelCreatorSummary>
+class _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements $MarvelCreatorSummaryCopyWith<$Res> {
   _$MarvelCreatorSummaryCopyWithImpl(this._value, this._then);
 
+  final MarvelCreatorSummary _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelCreatorSummary) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 }
 
@@ -197,7 +193,6 @@ abstract class _$$_EditorMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_EditorMarvelCreatorSummary) then) =
       __$$_EditorMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -205,26 +200,28 @@ abstract class _$$_EditorMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_EditorMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_EditorMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_EditorMarvelCreatorSummaryCopyWith<$Res> {
   __$$_EditorMarvelCreatorSummaryCopyWithImpl(
       _$_EditorMarvelCreatorSummary _value,
       $Res Function(_$_EditorMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_EditorMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_EditorMarvelCreatorSummary get _value =>
+      super._value as _$_EditorMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_EditorMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -264,17 +261,19 @@ class _$_EditorMarvelCreatorSummary implements _EditorMarvelCreatorSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EditorMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_EditorMarvelCreatorSummaryCopyWith<_$_EditorMarvelCreatorSummary>
       get copyWith => __$$_EditorMarvelCreatorSummaryCopyWithImpl<
           _$_EditorMarvelCreatorSummary>(this, _$identity);
@@ -307,22 +306,22 @@ class _$_EditorMarvelCreatorSummary implements _EditorMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -374,12 +373,12 @@ class _$_EditorMarvelCreatorSummary implements _EditorMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return editor?.call(this);
   }
@@ -438,7 +437,6 @@ abstract class _$$_WriterMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_WriterMarvelCreatorSummary) then) =
       __$$_WriterMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -446,26 +444,28 @@ abstract class _$$_WriterMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_WriterMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_WriterMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_WriterMarvelCreatorSummaryCopyWith<$Res> {
   __$$_WriterMarvelCreatorSummaryCopyWithImpl(
       _$_WriterMarvelCreatorSummary _value,
       $Res Function(_$_WriterMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_WriterMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_WriterMarvelCreatorSummary get _value =>
+      super._value as _$_WriterMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_WriterMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -505,17 +505,19 @@ class _$_WriterMarvelCreatorSummary implements _WriterMarvelCreatorSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WriterMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_WriterMarvelCreatorSummaryCopyWith<_$_WriterMarvelCreatorSummary>
       get copyWith => __$$_WriterMarvelCreatorSummaryCopyWithImpl<
           _$_WriterMarvelCreatorSummary>(this, _$identity);
@@ -548,22 +550,22 @@ class _$_WriterMarvelCreatorSummary implements _WriterMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -615,12 +617,12 @@ class _$_WriterMarvelCreatorSummary implements _WriterMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return writer?.call(this);
   }
@@ -679,7 +681,6 @@ abstract class _$$_InkerMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_InkerMarvelCreatorSummary) then) =
       __$$_InkerMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -687,26 +688,28 @@ abstract class _$$_InkerMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_InkerMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_InkerMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_InkerMarvelCreatorSummaryCopyWith<$Res> {
   __$$_InkerMarvelCreatorSummaryCopyWithImpl(
       _$_InkerMarvelCreatorSummary _value,
       $Res Function(_$_InkerMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_InkerMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_InkerMarvelCreatorSummary get _value =>
+      super._value as _$_InkerMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_InkerMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -746,17 +749,19 @@ class _$_InkerMarvelCreatorSummary implements _InkerMarvelCreatorSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_InkerMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_InkerMarvelCreatorSummaryCopyWith<_$_InkerMarvelCreatorSummary>
       get copyWith => __$$_InkerMarvelCreatorSummaryCopyWithImpl<
           _$_InkerMarvelCreatorSummary>(this, _$identity);
@@ -789,22 +794,22 @@ class _$_InkerMarvelCreatorSummary implements _InkerMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -856,12 +861,12 @@ class _$_InkerMarvelCreatorSummary implements _InkerMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return inker?.call(this);
   }
@@ -920,7 +925,6 @@ abstract class _$$_PencillerMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_PencillerMarvelCreatorSummary) then) =
       __$$_PencillerMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -928,26 +932,28 @@ abstract class _$$_PencillerMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_PencillerMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_PencillerMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_PencillerMarvelCreatorSummaryCopyWith<$Res> {
   __$$_PencillerMarvelCreatorSummaryCopyWithImpl(
       _$_PencillerMarvelCreatorSummary _value,
       $Res Function(_$_PencillerMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_PencillerMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_PencillerMarvelCreatorSummary get _value =>
+      super._value as _$_PencillerMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_PencillerMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -989,17 +995,19 @@ class _$_PencillerMarvelCreatorSummary
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PencillerMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_PencillerMarvelCreatorSummaryCopyWith<_$_PencillerMarvelCreatorSummary>
       get copyWith => __$$_PencillerMarvelCreatorSummaryCopyWithImpl<
           _$_PencillerMarvelCreatorSummary>(this, _$identity);
@@ -1032,22 +1040,22 @@ class _$_PencillerMarvelCreatorSummary
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -1099,12 +1107,12 @@ class _$_PencillerMarvelCreatorSummary
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return penciller?.call(this);
   }
@@ -1163,7 +1171,6 @@ abstract class _$$_ColoristMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_ColoristMarvelCreatorSummary) then) =
       __$$_ColoristMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -1171,26 +1178,28 @@ abstract class _$$_ColoristMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_ColoristMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_ColoristMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_ColoristMarvelCreatorSummaryCopyWith<$Res> {
   __$$_ColoristMarvelCreatorSummaryCopyWithImpl(
       _$_ColoristMarvelCreatorSummary _value,
       $Res Function(_$_ColoristMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_ColoristMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_ColoristMarvelCreatorSummary get _value =>
+      super._value as _$_ColoristMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_ColoristMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1230,17 +1239,19 @@ class _$_ColoristMarvelCreatorSummary implements _ColoristMarvelCreatorSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ColoristMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_ColoristMarvelCreatorSummaryCopyWith<_$_ColoristMarvelCreatorSummary>
       get copyWith => __$$_ColoristMarvelCreatorSummaryCopyWithImpl<
           _$_ColoristMarvelCreatorSummary>(this, _$identity);
@@ -1273,22 +1284,22 @@ class _$_ColoristMarvelCreatorSummary implements _ColoristMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -1340,12 +1351,12 @@ class _$_ColoristMarvelCreatorSummary implements _ColoristMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return colorist?.call(this);
   }
@@ -1404,7 +1415,6 @@ abstract class _$$_OtherMarvelCreatorSummaryCopyWith<$Res>
           $Res Function(_$_OtherMarvelCreatorSummary) then) =
       __$$_OtherMarvelCreatorSummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'role') String? role});
@@ -1412,26 +1422,28 @@ abstract class _$$_OtherMarvelCreatorSummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_OtherMarvelCreatorSummaryCopyWithImpl<$Res>
-    extends _$MarvelCreatorSummaryCopyWithImpl<$Res,
-        _$_OtherMarvelCreatorSummary>
+    extends _$MarvelCreatorSummaryCopyWithImpl<$Res>
     implements _$$_OtherMarvelCreatorSummaryCopyWith<$Res> {
   __$$_OtherMarvelCreatorSummaryCopyWithImpl(
       _$_OtherMarvelCreatorSummary _value,
       $Res Function(_$_OtherMarvelCreatorSummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_OtherMarvelCreatorSummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_OtherMarvelCreatorSummary get _value =>
+      super._value as _$_OtherMarvelCreatorSummary;
+
   @override
   $Res call({
     Object? name = freezed,
     Object? role = freezed,
   }) {
     return _then(_$_OtherMarvelCreatorSummary(
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: freezed == role
+      role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1471,17 +1483,19 @@ class _$_OtherMarvelCreatorSummary implements _OtherMarvelCreatorSummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OtherMarvelCreatorSummary &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, role);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_OtherMarvelCreatorSummaryCopyWith<_$_OtherMarvelCreatorSummary>
       get copyWith => __$$_OtherMarvelCreatorSummaryCopyWithImpl<
           _$_OtherMarvelCreatorSummary>(this, _$identity);
@@ -1514,22 +1528,22 @@ class _$_OtherMarvelCreatorSummary implements _OtherMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         editor,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         writer,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         inker,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         penciller,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         colorist,
-    TResult? Function(@JsonKey(name: 'name') String? name,
+    TResult Function(@JsonKey(name: 'name') String? name,
             @JsonKey(name: 'role') String? role)?
         other,
   }) {
@@ -1581,12 +1595,12 @@ class _$_OtherMarvelCreatorSummary implements _OtherMarvelCreatorSummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EditorMarvelCreatorSummary value)? editor,
-    TResult? Function(_WriterMarvelCreatorSummary value)? writer,
-    TResult? Function(_InkerMarvelCreatorSummary value)? inker,
-    TResult? Function(_PencillerMarvelCreatorSummary value)? penciller,
-    TResult? Function(_ColoristMarvelCreatorSummary value)? colorist,
-    TResult? Function(_OtherMarvelCreatorSummary value)? other,
+    TResult Function(_EditorMarvelCreatorSummary value)? editor,
+    TResult Function(_WriterMarvelCreatorSummary value)? writer,
+    TResult Function(_InkerMarvelCreatorSummary value)? inker,
+    TResult Function(_PencillerMarvelCreatorSummary value)? penciller,
+    TResult Function(_ColoristMarvelCreatorSummary value)? colorist,
+    TResult Function(_OtherMarvelCreatorSummary value)? other,
   }) {
     return other?.call(this);
   }

@@ -35,9 +35,7 @@ _$_MarvelComic _$$_MarvelComicFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) {
-  final val = <String, dynamic>{
-    'id': const IntToStringConverter().toJson(instance.id),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -45,6 +43,7 @@ Map<String, dynamic> _$$_MarvelComicToJson(_$_MarvelComic instance) {
     }
   }
 
+  writeNotNull('id', const IntToStringConverter().toJson(instance.id));
   writeNotNull('digitalId',
       const NullableIntToNullableStringConverter().toJson(instance.digitalId));
   writeNotNull('title', instance.title);

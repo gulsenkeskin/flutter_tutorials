@@ -45,9 +45,9 @@ mixin _$MarvelSeriesSummaryMetadata {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
-    TResult? Function(@JsonKey(name: 'name') String name)? comic,
-    TResult? Function(@JsonKey(name: 'names') List<String> names)? collection,
+    TResult Function()? unknown,
+    TResult Function(@JsonKey(name: 'name') String name)? comic,
+    TResult Function(@JsonKey(name: 'names') List<String> names)? collection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,9 +69,9 @@ mixin _$MarvelSeriesSummaryMetadata {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
-    TResult? Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
-    TResult? Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
+    TResult Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
+    TResult Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
+    TResult Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,20 +90,17 @@ abstract class $MarvelSeriesSummaryMetadataCopyWith<$Res> {
   factory $MarvelSeriesSummaryMetadataCopyWith(
           MarvelSeriesSummaryMetadata value,
           $Res Function(MarvelSeriesSummaryMetadata) then) =
-      _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res,
-          MarvelSeriesSummaryMetadata>;
+      _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res,
-        $Val extends MarvelSeriesSummaryMetadata>
+class _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res>
     implements $MarvelSeriesSummaryMetadataCopyWith<$Res> {
   _$MarvelSeriesSummaryMetadataCopyWithImpl(this._value, this._then);
 
+  final MarvelSeriesSummaryMetadata _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelSeriesSummaryMetadata) _then;
 }
 
 /// @nodoc
@@ -116,13 +113,16 @@ abstract class _$$_UnknownMarvelSeriesSummaryMetadataCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnknownMarvelSeriesSummaryMetadataCopyWithImpl<$Res>
-    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res,
-        _$_UnknownMarvelSeriesSummaryMetadata>
+    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res>
     implements _$$_UnknownMarvelSeriesSummaryMetadataCopyWith<$Res> {
   __$$_UnknownMarvelSeriesSummaryMetadataCopyWithImpl(
       _$_UnknownMarvelSeriesSummaryMetadata _value,
       $Res Function(_$_UnknownMarvelSeriesSummaryMetadata) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_UnknownMarvelSeriesSummaryMetadata));
+
+  @override
+  _$_UnknownMarvelSeriesSummaryMetadata get _value =>
+      super._value as _$_UnknownMarvelSeriesSummaryMetadata;
 }
 
 /// @nodoc
@@ -169,9 +169,9 @@ class _$_UnknownMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
-    TResult? Function(@JsonKey(name: 'name') String name)? comic,
-    TResult? Function(@JsonKey(name: 'names') List<String> names)? collection,
+    TResult Function()? unknown,
+    TResult Function(@JsonKey(name: 'name') String name)? comic,
+    TResult Function(@JsonKey(name: 'names') List<String> names)? collection,
   }) {
     return unknown?.call();
   }
@@ -205,9 +205,9 @@ class _$_UnknownMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
-    TResult? Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
-    TResult? Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
+    TResult Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
+    TResult Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
+    TResult Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
   }) {
     return unknown?.call(this);
   }
@@ -250,27 +250,28 @@ abstract class _$$_ComicMarvelSeriesSummaryMetadataCopyWith<$Res> {
           _$_ComicMarvelSeriesSummaryMetadata value,
           $Res Function(_$_ComicMarvelSeriesSummaryMetadata) then) =
       __$$_ComicMarvelSeriesSummaryMetadataCopyWithImpl<$Res>;
-  @useResult
   $Res call({@JsonKey(name: 'name') String name});
 }
 
 /// @nodoc
 class __$$_ComicMarvelSeriesSummaryMetadataCopyWithImpl<$Res>
-    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res,
-        _$_ComicMarvelSeriesSummaryMetadata>
+    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res>
     implements _$$_ComicMarvelSeriesSummaryMetadataCopyWith<$Res> {
   __$$_ComicMarvelSeriesSummaryMetadataCopyWithImpl(
       _$_ComicMarvelSeriesSummaryMetadata _value,
       $Res Function(_$_ComicMarvelSeriesSummaryMetadata) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_ComicMarvelSeriesSummaryMetadata));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_ComicMarvelSeriesSummaryMetadata get _value =>
+      super._value as _$_ComicMarvelSeriesSummaryMetadata;
+
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
   }) {
     return _then(_$_ComicMarvelSeriesSummaryMetadata(
-      name: null == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -307,16 +308,16 @@ class _$_ComicMarvelSeriesSummaryMetadata
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ComicMarvelSeriesSummaryMetadata &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_ComicMarvelSeriesSummaryMetadataCopyWith<
           _$_ComicMarvelSeriesSummaryMetadata>
       get copyWith => __$$_ComicMarvelSeriesSummaryMetadataCopyWithImpl<
@@ -336,9 +337,9 @@ class _$_ComicMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
-    TResult? Function(@JsonKey(name: 'name') String name)? comic,
-    TResult? Function(@JsonKey(name: 'names') List<String> names)? collection,
+    TResult Function()? unknown,
+    TResult Function(@JsonKey(name: 'name') String name)? comic,
+    TResult Function(@JsonKey(name: 'names') List<String> names)? collection,
   }) {
     return comic?.call(name);
   }
@@ -372,9 +373,9 @@ class _$_ComicMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
-    TResult? Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
-    TResult? Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
+    TResult Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
+    TResult Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
+    TResult Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
   }) {
     return comic?.call(this);
   }
@@ -424,27 +425,29 @@ abstract class _$$_CollectionMarvelSeriesSummaryMetadataCopyWith<$Res> {
           _$_CollectionMarvelSeriesSummaryMetadata value,
           $Res Function(_$_CollectionMarvelSeriesSummaryMetadata) then) =
       __$$_CollectionMarvelSeriesSummaryMetadataCopyWithImpl<$Res>;
-  @useResult
   $Res call({@JsonKey(name: 'names') List<String> names});
 }
 
 /// @nodoc
 class __$$_CollectionMarvelSeriesSummaryMetadataCopyWithImpl<$Res>
-    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res,
-        _$_CollectionMarvelSeriesSummaryMetadata>
+    extends _$MarvelSeriesSummaryMetadataCopyWithImpl<$Res>
     implements _$$_CollectionMarvelSeriesSummaryMetadataCopyWith<$Res> {
   __$$_CollectionMarvelSeriesSummaryMetadataCopyWithImpl(
       _$_CollectionMarvelSeriesSummaryMetadata _value,
       $Res Function(_$_CollectionMarvelSeriesSummaryMetadata) _then)
-      : super(_value, _then);
+      : super(_value,
+            (v) => _then(v as _$_CollectionMarvelSeriesSummaryMetadata));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_CollectionMarvelSeriesSummaryMetadata get _value =>
+      super._value as _$_CollectionMarvelSeriesSummaryMetadata;
+
   @override
   $Res call({
-    Object? names = null,
+    Object? names = freezed,
   }) {
     return _then(_$_CollectionMarvelSeriesSummaryMetadata(
-      names: null == names
+      names: names == freezed
           ? _value._names
           : names // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -497,7 +500,6 @@ class _$_CollectionMarvelSeriesSummaryMetadata
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_CollectionMarvelSeriesSummaryMetadataCopyWith<
           _$_CollectionMarvelSeriesSummaryMetadata>
       get copyWith => __$$_CollectionMarvelSeriesSummaryMetadataCopyWithImpl<
@@ -517,9 +519,9 @@ class _$_CollectionMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? unknown,
-    TResult? Function(@JsonKey(name: 'name') String name)? comic,
-    TResult? Function(@JsonKey(name: 'names') List<String> names)? collection,
+    TResult Function()? unknown,
+    TResult Function(@JsonKey(name: 'name') String name)? comic,
+    TResult Function(@JsonKey(name: 'names') List<String> names)? collection,
   }) {
     return collection?.call(names);
   }
@@ -553,9 +555,9 @@ class _$_CollectionMarvelSeriesSummaryMetadata
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
-    TResult? Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
-    TResult? Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
+    TResult Function(_UnknownMarvelSeriesSummaryMetadata value)? unknown,
+    TResult Function(_ComicMarvelSeriesSummaryMetadata value)? comic,
+    TResult Function(_CollectionMarvelSeriesSummaryMetadata value)? collection,
   }) {
     return collection?.call(this);
   }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:marvel_comics/domain/api/dio/certificates/certificates_management.dart';
+import 'package:marvel_comics/domain/global/navigator_key.dart';
 import 'package:marvel_comics/domain/marvel_api_example.dart';
 
 void main() {
+  trustMarvelApiCertificate();
   runApp(const MarvelComicsApp());
 }
 
@@ -11,7 +14,7 @@ class MarvelComicsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      navigatorKey: globalNavigatorKey,
       theme: ThemeData(colorSchemeSeed: Colors.red),
       home: const MyHomePage(),
     );

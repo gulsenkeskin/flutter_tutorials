@@ -39,8 +39,7 @@ mixin _$MarvelStoryList {
 abstract class $MarvelStoryListCopyWith<$Res> {
   factory $MarvelStoryListCopyWith(
           MarvelStoryList value, $Res Function(MarvelStoryList) then) =
-      _$MarvelStoryListCopyWithImpl<$Res, MarvelStoryList>;
-  @useResult
+      _$MarvelStoryListCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'available') int available,
       @JsonKey(name: 'returned') int returned,
@@ -49,41 +48,39 @@ abstract class $MarvelStoryListCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarvelStoryListCopyWithImpl<$Res, $Val extends MarvelStoryList>
+class _$MarvelStoryListCopyWithImpl<$Res>
     implements $MarvelStoryListCopyWith<$Res> {
   _$MarvelStoryListCopyWithImpl(this._value, this._then);
 
+  final MarvelStoryList _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelStoryList) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? available = null,
-    Object? returned = null,
+    Object? available = freezed,
+    Object? returned = freezed,
     Object? url = freezed,
-    Object? items = null,
+    Object? items = freezed,
   }) {
     return _then(_value.copyWith(
-      available: null == available
+      available: available == freezed
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as int,
-      returned: null == returned
+      returned: returned == freezed
           ? _value.returned
           : returned // ignore: cast_nullable_to_non_nullable
               as int,
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      items: null == items
+      items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<MarvelStorySummary>,
-    ) as $Val);
+    ));
   }
 }
 
@@ -94,7 +91,6 @@ abstract class _$$_MarvelStoryListCopyWith<$Res>
           _$_MarvelStoryList value, $Res Function(_$_MarvelStoryList) then) =
       __$$_MarvelStoryListCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'available') int available,
       @JsonKey(name: 'returned') int returned,
@@ -104,34 +100,36 @@ abstract class _$$_MarvelStoryListCopyWith<$Res>
 
 /// @nodoc
 class __$$_MarvelStoryListCopyWithImpl<$Res>
-    extends _$MarvelStoryListCopyWithImpl<$Res, _$_MarvelStoryList>
+    extends _$MarvelStoryListCopyWithImpl<$Res>
     implements _$$_MarvelStoryListCopyWith<$Res> {
   __$$_MarvelStoryListCopyWithImpl(
       _$_MarvelStoryList _value, $Res Function(_$_MarvelStoryList) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_MarvelStoryList));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_MarvelStoryList get _value => super._value as _$_MarvelStoryList;
+
   @override
   $Res call({
-    Object? available = null,
-    Object? returned = null,
+    Object? available = freezed,
+    Object? returned = freezed,
     Object? url = freezed,
-    Object? items = null,
+    Object? items = freezed,
   }) {
     return _then(_$_MarvelStoryList(
-      available: null == available
+      available: available == freezed
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as int,
-      returned: null == returned
+      returned: returned == freezed
           ? _value.returned
           : returned // ignore: cast_nullable_to_non_nullable
               as int,
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      items: null == items
+      items: items == freezed
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<MarvelStorySummary>,
@@ -183,22 +181,23 @@ class _$_MarvelStoryList implements _MarvelStoryList {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MarvelStoryList &&
-            (identical(other.available, available) ||
-                other.available == available) &&
-            (identical(other.returned, returned) ||
-                other.returned == returned) &&
-            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.available, available) &&
+            const DeepCollectionEquality().equals(other.returned, returned) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, available, returned, url,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(available),
+      const DeepCollectionEquality().hash(returned),
+      const DeepCollectionEquality().hash(url),
       const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_MarvelStoryListCopyWith<_$_MarvelStoryList> get copyWith =>
       __$$_MarvelStoryListCopyWithImpl<_$_MarvelStoryList>(this, _$identity);
 

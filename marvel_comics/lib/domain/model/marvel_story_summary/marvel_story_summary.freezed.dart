@@ -50,13 +50,13 @@ mixin _$MarvelStorySummary {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         cover,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         interior,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         promo,
   }) =>
@@ -84,9 +84,9 @@ mixin _$MarvelStorySummary {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CoverMarvelStorySummary value)? cover,
-    TResult? Function(_InteriorMarvelStorySummary value)? interior,
-    TResult? Function(_PromoMarvelStorySummary value)? promo,
+    TResult Function(_CoverMarvelStorySummary value)? cover,
+    TResult Function(_InteriorMarvelStorySummary value)? interior,
+    TResult Function(_PromoMarvelStorySummary value)? promo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -107,39 +107,36 @@ mixin _$MarvelStorySummary {
 abstract class $MarvelStorySummaryCopyWith<$Res> {
   factory $MarvelStorySummaryCopyWith(
           MarvelStorySummary value, $Res Function(MarvelStorySummary) then) =
-      _$MarvelStorySummaryCopyWithImpl<$Res, MarvelStorySummary>;
-  @useResult
+      _$MarvelStorySummaryCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'resourceURI') String? url,
       @JsonKey(name: 'name') String? name});
 }
 
 /// @nodoc
-class _$MarvelStorySummaryCopyWithImpl<$Res, $Val extends MarvelStorySummary>
+class _$MarvelStorySummaryCopyWithImpl<$Res>
     implements $MarvelStorySummaryCopyWith<$Res> {
   _$MarvelStorySummaryCopyWithImpl(this._value, this._then);
 
+  final MarvelStorySummary _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(MarvelStorySummary) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = freezed,
     Object? name = freezed,
   }) {
     return _then(_value.copyWith(
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 }
 
@@ -150,7 +147,6 @@ abstract class _$$_CoverMarvelStorySummaryCopyWith<$Res>
           $Res Function(_$_CoverMarvelStorySummary) then) =
       __$$_CoverMarvelStorySummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'resourceURI') String? url,
       @JsonKey(name: 'name') String? name});
@@ -158,24 +154,27 @@ abstract class _$$_CoverMarvelStorySummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_CoverMarvelStorySummaryCopyWithImpl<$Res>
-    extends _$MarvelStorySummaryCopyWithImpl<$Res, _$_CoverMarvelStorySummary>
+    extends _$MarvelStorySummaryCopyWithImpl<$Res>
     implements _$$_CoverMarvelStorySummaryCopyWith<$Res> {
   __$$_CoverMarvelStorySummaryCopyWithImpl(_$_CoverMarvelStorySummary _value,
       $Res Function(_$_CoverMarvelStorySummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_CoverMarvelStorySummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_CoverMarvelStorySummary get _value =>
+      super._value as _$_CoverMarvelStorySummary;
+
   @override
   $Res call({
     Object? url = freezed,
     Object? name = freezed,
   }) {
     return _then(_$_CoverMarvelStorySummary(
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -215,17 +214,19 @@ class _$_CoverMarvelStorySummary implements _CoverMarvelStorySummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CoverMarvelStorySummary &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, url, name);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_CoverMarvelStorySummaryCopyWith<_$_CoverMarvelStorySummary>
       get copyWith =>
           __$$_CoverMarvelStorySummaryCopyWithImpl<_$_CoverMarvelStorySummary>(
@@ -250,13 +251,13 @@ class _$_CoverMarvelStorySummary implements _CoverMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         cover,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         interior,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         promo,
   }) {
@@ -296,9 +297,9 @@ class _$_CoverMarvelStorySummary implements _CoverMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CoverMarvelStorySummary value)? cover,
-    TResult? Function(_InteriorMarvelStorySummary value)? interior,
-    TResult? Function(_PromoMarvelStorySummary value)? promo,
+    TResult Function(_CoverMarvelStorySummary value)? cover,
+    TResult Function(_InteriorMarvelStorySummary value)? interior,
+    TResult Function(_PromoMarvelStorySummary value)? promo,
   }) {
     return cover?.call(this);
   }
@@ -353,7 +354,6 @@ abstract class _$$_InteriorMarvelStorySummaryCopyWith<$Res>
           $Res Function(_$_InteriorMarvelStorySummary) then) =
       __$$_InteriorMarvelStorySummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'resourceURI') String? url,
       @JsonKey(name: 'name') String? name});
@@ -361,26 +361,28 @@ abstract class _$$_InteriorMarvelStorySummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_InteriorMarvelStorySummaryCopyWithImpl<$Res>
-    extends _$MarvelStorySummaryCopyWithImpl<$Res,
-        _$_InteriorMarvelStorySummary>
+    extends _$MarvelStorySummaryCopyWithImpl<$Res>
     implements _$$_InteriorMarvelStorySummaryCopyWith<$Res> {
   __$$_InteriorMarvelStorySummaryCopyWithImpl(
       _$_InteriorMarvelStorySummary _value,
       $Res Function(_$_InteriorMarvelStorySummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_InteriorMarvelStorySummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_InteriorMarvelStorySummary get _value =>
+      super._value as _$_InteriorMarvelStorySummary;
+
   @override
   $Res call({
     Object? url = freezed,
     Object? name = freezed,
   }) {
     return _then(_$_InteriorMarvelStorySummary(
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -420,17 +422,19 @@ class _$_InteriorMarvelStorySummary implements _InteriorMarvelStorySummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_InteriorMarvelStorySummary &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, url, name);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_InteriorMarvelStorySummaryCopyWith<_$_InteriorMarvelStorySummary>
       get copyWith => __$$_InteriorMarvelStorySummaryCopyWithImpl<
           _$_InteriorMarvelStorySummary>(this, _$identity);
@@ -454,13 +458,13 @@ class _$_InteriorMarvelStorySummary implements _InteriorMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         cover,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         interior,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         promo,
   }) {
@@ -500,9 +504,9 @@ class _$_InteriorMarvelStorySummary implements _InteriorMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CoverMarvelStorySummary value)? cover,
-    TResult? Function(_InteriorMarvelStorySummary value)? interior,
-    TResult? Function(_PromoMarvelStorySummary value)? promo,
+    TResult Function(_CoverMarvelStorySummary value)? cover,
+    TResult Function(_InteriorMarvelStorySummary value)? interior,
+    TResult Function(_PromoMarvelStorySummary value)? promo,
   }) {
     return interior?.call(this);
   }
@@ -557,7 +561,6 @@ abstract class _$$_PromoMarvelStorySummaryCopyWith<$Res>
           $Res Function(_$_PromoMarvelStorySummary) then) =
       __$$_PromoMarvelStorySummaryCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call(
       {@JsonKey(name: 'resourceURI') String? url,
       @JsonKey(name: 'name') String? name});
@@ -565,24 +568,27 @@ abstract class _$$_PromoMarvelStorySummaryCopyWith<$Res>
 
 /// @nodoc
 class __$$_PromoMarvelStorySummaryCopyWithImpl<$Res>
-    extends _$MarvelStorySummaryCopyWithImpl<$Res, _$_PromoMarvelStorySummary>
+    extends _$MarvelStorySummaryCopyWithImpl<$Res>
     implements _$$_PromoMarvelStorySummaryCopyWith<$Res> {
   __$$_PromoMarvelStorySummaryCopyWithImpl(_$_PromoMarvelStorySummary _value,
       $Res Function(_$_PromoMarvelStorySummary) _then)
-      : super(_value, _then);
+      : super(_value, (v) => _then(v as _$_PromoMarvelStorySummary));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_PromoMarvelStorySummary get _value =>
+      super._value as _$_PromoMarvelStorySummary;
+
   @override
   $Res call({
     Object? url = freezed,
     Object? name = freezed,
   }) {
     return _then(_$_PromoMarvelStorySummary(
-      url: freezed == url
+      url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -622,17 +628,19 @@ class _$_PromoMarvelStorySummary implements _PromoMarvelStorySummary {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PromoMarvelStorySummary &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, url, name);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
   _$$_PromoMarvelStorySummaryCopyWith<_$_PromoMarvelStorySummary>
       get copyWith =>
           __$$_PromoMarvelStorySummaryCopyWithImpl<_$_PromoMarvelStorySummary>(
@@ -657,13 +665,13 @@ class _$_PromoMarvelStorySummary implements _PromoMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         cover,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         interior,
-    TResult? Function(@JsonKey(name: 'resourceURI') String? url,
+    TResult Function(@JsonKey(name: 'resourceURI') String? url,
             @JsonKey(name: 'name') String? name)?
         promo,
   }) {
@@ -703,9 +711,9 @@ class _$_PromoMarvelStorySummary implements _PromoMarvelStorySummary {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CoverMarvelStorySummary value)? cover,
-    TResult? Function(_InteriorMarvelStorySummary value)? interior,
-    TResult? Function(_PromoMarvelStorySummary value)? promo,
+    TResult Function(_CoverMarvelStorySummary value)? cover,
+    TResult Function(_InteriorMarvelStorySummary value)? interior,
+    TResult Function(_PromoMarvelStorySummary value)? promo,
   }) {
     return promo?.call(this);
   }
