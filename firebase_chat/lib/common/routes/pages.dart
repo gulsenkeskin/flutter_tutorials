@@ -1,8 +1,11 @@
-import 'package:firebase_chat/pages/welcome/welcome_index.dart'
-    show WelcomeBinding, WelcomePage;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
+
+import 'package:firebase_chat/pages/sign_in/sign_in_index.dart'
+    show SignInBinding, SignInPage;
+import 'package:firebase_chat/pages/welcome/welcome_index.dart'
+    show WelcomeBinding, WelcomePage;
 
 class AppPages {
   static const INITIAL = AppRoutes.INITIAL;
@@ -15,16 +18,15 @@ class AppPages {
       name: AppRoutes.INITIAL,
       page: () => const WelcomePage(),
       binding: WelcomeBinding(),
-      /*   middlewares: [
-        RouteWelcomeMiddleware(priority: 1),
-      ],*/
     ),
-    /*
     GetPage(
       name: AppRoutes.SIGN_IN,
       page: () => SignInPage(),
       binding: SignInBinding(),
     ),
+
+    /*
+
 
     // check if needed to login or not
     GetPage(
