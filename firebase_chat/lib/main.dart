@@ -1,4 +1,7 @@
 import 'package:firebase_chat/common/routes/pages.dart';
+import 'package:firebase_chat/common/services/storage.dart';
+import 'package:firebase_chat/common/store/config.dart';
+import 'package:firebase_chat/common/store/store.dart';
 import 'package:firebase_chat/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +10,11 @@ import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //shared preferences'i başlatıyoruz
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  Get.put<ConfigStore>(ConfigStore());
+  Get.put<UserStore>(UserStore());
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
